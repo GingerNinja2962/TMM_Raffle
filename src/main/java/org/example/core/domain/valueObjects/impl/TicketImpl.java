@@ -1,6 +1,6 @@
-package org.example.core.domain.models.Impl;
+package org.example.core.domain.valueObjects.impl;
 
-import org.example.core.domain.models.Ticket;
+import org.example.core.domain.valueObjects.Ticket;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

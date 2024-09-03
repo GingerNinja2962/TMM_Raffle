@@ -1,6 +1,6 @@
 package org.example.core.repositories;
 
-import org.example.core.domain.models.Item;
+import org.example.core.domain.valueObjects.Item;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

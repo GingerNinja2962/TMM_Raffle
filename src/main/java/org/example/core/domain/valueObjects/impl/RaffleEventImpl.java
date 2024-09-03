@@ -1,6 +1,6 @@
-package org.example.core.domain.models.Impl;
+package org.example.core.domain.valueObjects.impl;
 
-import org.example.core.domain.models.RaffleEvent;
+import org.example.core.domain.valueObjects.RaffleEvent;
 
 import java.util.UUID;
 

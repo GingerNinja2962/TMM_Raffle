@@ -1,15 +1,15 @@
-package org.example.core.domain.models.Impl;
+package org.example.core.domain.entites;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import org.example.core.domain.models.Item;
-import org.springframework.lang.NonNull;
+import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-public class ItemImpl implements Item {
+@Table(name = "TMM_Items", schema = "TMM_Raffle")
+public class Item {
 
     @Id
     private UUID ID;
@@ -19,84 +19,55 @@ public class ItemImpl implements Item {
     private Integer Value;
 
     //<editor-fold desc="======== Constructors ========">
-
-    public ItemImpl() {
-
-    }
-
-    public ItemImpl(@NonNull String Name, @NonNull Integer Value) {
-        this.ID = UUID.randomUUID();
-        this.CreationDate = LocalDateTime.now();
-        this.Name = Name;
-        this.Value = Value;
-    }
+    public Item() {}
     //</editor-fold>
-
-    public void markAsSold() {
-        this.Available = false;
-    }
 
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID">
-    @Override
     public UUID getId() {
         return this.ID;
     }
 
-    @Override
     public void setId(UUID id) {
-        if (this.ID == null)
-            this.ID = id;
+        this.ID = id;
     }
     //</editor-fold>
 
     //<editor-fold desc="Creation Date">
-    @Override
     public LocalDateTime getCreationDate() {
         return this.CreationDate;
     }
 
-    @Override
     public void setCreationDate(LocalDateTime creationDate) {
-        if (this.CreationDate == null)
-            this.CreationDate = creationDate;
+        this.CreationDate = creationDate;
     }
     //</editor-fold>
 
     //<editor-fold desc="Name">
-    @Override
     public String getName() {
         return this.Name;
     }
 
-    @Override
     public void setName(String name) {
-        if (this.Name.isBlank())
-            this.Name = name;
+        this.Name = name;
     }
-
     //</editor-fold>
 
     //<editor-fold desc="Value">
-    @Override
     public Integer getValue() {
         return this.Value;
     }
 
-    @Override
     public void setValue(Integer value) {
-        if (this.Value == null)
-            this.Value = value;
+        this.Value = value;
     }
     //</editor-fold>
 
     //<editor-fold desc="Availability">
-    @Override
-    public boolean isAvailable() {
+    public boolean getAvailable() {
         return this.Available;
     }
 
-    @Override
     public void setAvailable(boolean available) {
         Available = available;
     }

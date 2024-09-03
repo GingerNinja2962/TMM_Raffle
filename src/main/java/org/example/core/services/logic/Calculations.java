@@ -5,10 +5,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.core.domain.data_Structures.Impl.TupleImpl;
 import org.example.core.domain.data_Structures.Tuple;
-import org.example.core.domain.models.Entry;
-import org.example.core.domain.models.Item;
-import org.example.core.domain.models.RaffleEvent;
-import org.example.core.domain.models.User;
+import org.example.core.domain.valueObjects.Entry;
+import org.example.core.domain.valueObjects.Item;
+import org.example.core.domain.valueObjects.RaffleEvent;
+import org.example.core.domain.valueObjects.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

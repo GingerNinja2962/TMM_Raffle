@@ -1,9 +1,9 @@
-package org.example.core.domain.models.Impl;
+package org.example.core.domain.valueObjects.impl;
 
-import org.example.core.domain.models.Entry;
-import org.example.core.domain.models.RaffleEvent;
-import org.example.core.domain.models.Ticket;
-import org.example.core.domain.models.User;
+import org.example.core.domain.valueObjects.Entry;
+import org.example.core.domain.valueObjects.RaffleEvent;
+import org.example.core.domain.valueObjects.Ticket;
+import org.example.core.domain.valueObjects.User;
 
 import java.util.UUID;
 
@@ -28,6 +28,8 @@ public class EntryImpl implements Entry {
     public UUID getId() {
         return this.ID;
     }
+
+
     //</editor-fold>
 
     //<editor-fold desc="======== Raffle Event ========">

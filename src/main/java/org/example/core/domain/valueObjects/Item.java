@@ -1,4 +1,4 @@
-package org.example.core.domain.models;
+package org.example.core.domain.valueObjects;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
