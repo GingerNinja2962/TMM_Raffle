@@ -1,22 +1,21 @@
-package org.example.core.domain.entites;
+package org.example.core.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
-@Table(name = "TMM_Items", schema = "TMM_Raffle")
+//@Table(name = "TMM_Items", schema = "TMM_Raffle")
 public class Item {
 
     @Id
-    private UUID ID;
-    private LocalDateTime CreationDate;
-    private boolean Available = true;
-    private String Name;
-    private Integer Value;
+    private UUID id;
+    private LocalDateTime creationDate;
+    private boolean available = true;
+    private String name;
+    private Integer goldValue;
 
     //<editor-fold desc="======== Constructors ========">
     public Item() {}
@@ -25,51 +24,51 @@ public class Item {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID">
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
 
     public void setId(UUID id) {
-        this.ID = id;
+        this.id = id;
     }
     //</editor-fold>
 
     //<editor-fold desc="Creation Date">
     public LocalDateTime getCreationDate() {
-        return this.CreationDate;
+        return this.creationDate;
     }
 
     public void setCreationDate(LocalDateTime creationDate) {
-        this.CreationDate = creationDate;
+        this.creationDate = creationDate;
     }
     //</editor-fold>
 
     //<editor-fold desc="Name">
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
     //</editor-fold>
 
-    //<editor-fold desc="Value">
-    public Integer getValue() {
-        return this.Value;
+    //<editor-fold desc="Gold Value">
+    public Integer getGoldValue() {
+        return this.goldValue;
     }
 
-    public void setValue(Integer value) {
-        this.Value = value;
+    public void setGoldValue(Integer goldValue) {
+        this.goldValue = goldValue;
     }
     //</editor-fold>
 
     //<editor-fold desc="Availability">
     public boolean getAvailable() {
-        return this.Available;
+        return this.available;
     }
 
     public void setAvailable(boolean available) {
-        Available = available;
+        this.available = available;
     }
     //</editor-fold>
     //</editor-fold>

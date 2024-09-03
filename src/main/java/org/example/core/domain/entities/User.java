@@ -1,17 +1,16 @@
-package org.example.core.domain.entites;
+package org.example.core.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.util.UUID;
 
 @Entity(name = "user")
-@Table(name = "TMM_Users", schema = "TMM_Raffle")
+//@Table(name = "TMM_Users", schema = "TMM_Raffle")
 public class User {
 
     @Id
-    private UUID Id;
+    private UUID id;
     private String userName;
     private Integer goldDonated;
 
@@ -22,11 +21,11 @@ public class User {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID">
     public UUID getId() {
-        return this.Id;
+        return this.id;
     }
 
     public void setId(UUID id) {
-        this.Id = id;
+        this.id = id;
     }
     //</editor-fold>
 

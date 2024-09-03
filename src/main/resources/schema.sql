@@ -35,4 +35,12 @@ CREATE TABLE TMM_Entries (
         FOREIGN KEY (TicketID) REFERENCES TMM_Tickets(ID),
         FOREIGN KEY (RaffleID) REFERENCES TMM_Raffles(ID)
 );
-COMMIT;
+
+CREATE TABLE TMM_Items (
+        ID UUID NOT NULL PRIMARY KEY,
+        Name VARCHAR(50) NOT NULL,
+        GoldValue BIGINT NOT NULL,
+        Available BIT NOT NULL,
+        CreationDate TIMESTAMP NOT NULL,
+        LastUpdated TIMESTAMP NOT NULL
+);

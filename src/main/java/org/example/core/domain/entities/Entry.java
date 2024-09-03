@@ -1,15 +1,18 @@
-package org.example.core.domain.entites;
+package org.example.core.domain.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 import java.util.UUID;
 
 @Entity(name = "entry")
-@Table(name = "TMM_Entries", schema = "TMM_Raffle")
+//@Table(name = "TMM_Entries", schema = "TMM_Raffle")
 public class Entry {
 
     @Id
-    private UUID Id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false, targetEntity = User.class)
     private User user;
@@ -27,11 +30,11 @@ public class Entry {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="======== ID ========">
     public UUID getId() {
-        return this.Id;
+        return this.id;
     }
 
     public void setId(UUID id) {
-        this.Id = id;
+        this.id = id;
     }
     //</editor-fold>
 

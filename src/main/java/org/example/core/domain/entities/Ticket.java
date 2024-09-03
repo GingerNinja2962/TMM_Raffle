@@ -1,18 +1,17 @@
-package org.example.core.domain.entites;
+package org.example.core.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "ticket")
-@Table(name = "TMM_Tickets", schema = "TMM_Raffle")
+//@Table(name = "TMM_Tickets", schema = "TMM_Raffle")
 public class Ticket {
 
     @Id
-    private UUID Id;
+    private UUID id;
     private LocalDateTime issuedAt;
     private Boolean validity;
 
@@ -23,11 +22,11 @@ public class Ticket {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID">
     public UUID getId() {
-        return this.Id;
+        return this.id;
     }
 
     public void setId(UUID id) {
-        this.Id = id;
+        this.id = id;
     }
     //</editor-fold>
 

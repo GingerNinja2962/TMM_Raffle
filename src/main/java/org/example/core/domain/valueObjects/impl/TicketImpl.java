@@ -7,15 +7,20 @@ import java.util.UUID;
 
 public class TicketImpl implements Ticket {
 
-    private final UUID ID;
+    private final UUID id;
     private final LocalDateTime issuedAt;
-    private boolean validity;
+    private boolean validity = true;
 
     //<editor-fold desc="======== Constructors ========">
     TicketImpl() {
-        this.ID = UUID.randomUUID();
+        this.id = UUID.randomUUID();
         this.issuedAt = LocalDateTime.now();
-        this.validity = true;
+    }
+
+    TicketImpl(UUID id, LocalDateTime issuedAt, boolean validity) {
+        this.id = id;
+        this.issuedAt = issuedAt;
+        this.validity = validity;
     }
     //</editor-fold>
 
@@ -23,7 +28,7 @@ public class TicketImpl implements Ticket {
     //<editor-fold desc="ID">
     @Override
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
     //</editor-fold>
 

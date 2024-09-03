@@ -1,83 +1,84 @@
 package org.example.core.domain.valueObjects.impl;
 
 import org.example.core.domain.valueObjects.Item;
-import org.springframework.lang.NonNull;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class ItemImpl implements Item {
 
-    private final UUID ID;
-    private final LocalDateTime CreationDate;
-    private boolean Available = true;
-    private String Name;
-    private Integer Value;
+    private final UUID id;
+    private final LocalDateTime creationDate;
+    private boolean available = true;
+    private String name;
+    private Integer value;
 
     //<editor-fold desc="======== Constructors ========">
-    public ItemImpl(@NonNull String Name, @NonNull Integer Value) {
-        this.ID = UUID.randomUUID();
-        this.CreationDate = LocalDateTime.now();
-        this.Name = Name;
-        this.Value = Value;
+    public ItemImpl(String Name, Integer Value) {
+        this.id = UUID.randomUUID();
+        this.creationDate = LocalDateTime.now();
+        this.name = Name;
+        this.value = Value;
+    }
+
+    public ItemImpl(UUID id, LocalDateTime creationDate, Boolean available, String name, Integer value) {
+        this.id = id;
+        this.creationDate = creationDate;
+        this.available = available;
+        this.name = name;
+        this.value = value;
     }
     //</editor-fold>
-
-    public void markAsSold() {
-        this.Available = false;
-    }
 
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID">
     @Override
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
     //</editor-fold>
 
     //<editor-fold desc="Creation Date">
     @Override
     public LocalDateTime getCreationDate() {
-        return this.CreationDate;
+        return this.creationDate;
     }
     //</editor-fold>
 
     //<editor-fold desc="Name">
     @Override
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
     @Override
-    public void setName(String name) {
-        if (this.Name.isBlank())
-            this.Name = name;
+    public void changeName(String name) {
+        if (this.name.isBlank())
+            this.name = name;
     }
-
     //</editor-fold>
 
     //<editor-fold desc="Value">
     @Override
     public Integer getValue() {
-        return this.Value;
+        return this.value;
     }
 
     @Override
-    public void setValue(Integer value) {
-        if (this.Value == null)
-            this.Value = value;
+    public void changeValue(Integer value) {
+        this.value = value;
     }
     //</editor-fold>
 
     //<editor-fold desc="Availability">
     @Override
     public boolean isAvailable() {
-        return this.Available;
+        return this.available;
     }
 
     @Override
-    public void setAvailable(boolean available) {
-        Available = available;
+    public void markAsSold() {
+        this.available = false;
     }
     //</editor-fold>
     //</editor-fold>

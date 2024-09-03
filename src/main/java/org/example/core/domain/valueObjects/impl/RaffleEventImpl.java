@@ -6,18 +6,28 @@ import java.util.UUID;
 
 public class RaffleEventImpl implements RaffleEvent {
 
-    private final UUID ID;
-    private int costPerTicket;
-    private int bonusTicketCost;
-    private int bonusTicketAmount;
-    private int maxTicketCount;
-    private int maxRewardsPerUser;
+    private final UUID id;
+    private Integer costPerTicket;
+    private Integer bonusTicketCost;
+    private Integer bonusTicketAmount;
+    private Integer maxTicketCount;
+    private Integer maxRewardsPerUser;
 
     //<editor-fold desc="======== Constructors ========">
-    RaffleEventImpl(int costPerTicket, int bonusTicketCost, int maxTicketCount, int maxRewardsPerUser) {
-        this.ID = UUID.randomUUID();
+    RaffleEventImpl(Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
+        this.id = UUID.randomUUID();
         this.costPerTicket = costPerTicket;
         this.bonusTicketCost = bonusTicketCost;
+        this.bonusTicketAmount = bonusTicketAmount;
+        this.maxTicketCount = maxTicketCount;
+        this.maxRewardsPerUser = maxRewardsPerUser;
+    }
+
+    RaffleEventImpl(UUID id, Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
+        this.id = id;
+        this.costPerTicket = costPerTicket;
+        this.bonusTicketCost = bonusTicketCost;
+        this.bonusTicketAmount = bonusTicketAmount;
         this.maxTicketCount = maxTicketCount;
         this.maxRewardsPerUser = maxRewardsPerUser;
     }
@@ -27,66 +37,66 @@ public class RaffleEventImpl implements RaffleEvent {
     //<editor-fold desc="ID Methods">
     @Override
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
     //</editor-fold>
 
     //<editor-fold desc="Cost per Ticket">
     @Override
-    public int getCostPerTicket() {
+    public Integer getCostPerTicket() {
         return this.costPerTicket;
     }
 
     @Override
-    public void setCostPerTicket(int costPerTicket) {
+    public void setCostPerTicket(Integer costPerTicket) {
         this.costPerTicket = costPerTicket;
     }
     //</editor-fold>
 
     //<editor-fold desc="Bonus Ticket Cost">
     @Override
-    public int getBonusTicketCost() {
+    public Integer getBonusTicketCost() {
         return this.bonusTicketCost;
     }
 
     @Override
-    public void setBonusTicketCost(int bonusTicketCost) {
+    public void setBonusTicketCost(Integer bonusTicketCost) {
         this.bonusTicketCost = bonusTicketCost;
     }
     //</editor-fold>
 
     //<editor-fold desc="Bonus Ticket Amount">
     @Override
-    public int getBonusTicketAmount() {
+    public Integer getBonusTicketAmount() {
         return this.bonusTicketAmount;
     }
 
     @Override
-    public void setBonusTicketAmount(int bonusTicketAmount) {
+    public void setBonusTicketAmount(Integer bonusTicketAmount) {
         this.bonusTicketAmount = bonusTicketAmount;
     }
     //</editor-fold>
 
     //<editor-fold desc="Max Ticket per User">
     @Override
-    public int getMaxTicketCount() {
+    public Integer getMaxTicketCount() {
         return this.maxTicketCount;
     }
 
     @Override
-    public void setMaxTicketCount(int maxTicketCount) {
+    public void setMaxTicketCount(Integer maxTicketCount) {
         this.maxTicketCount = maxTicketCount;
     }
     //</editor-fold>
 
     //<editor-fold desc="Max Rewards per User">
     @Override
-    public int getMaxRewardsPerUser() {
+    public Integer getMaxRewardsPerUser() {
         return this.maxRewardsPerUser;
     }
 
     @Override
-    public void setMaxRewardsPerUser(int maxRewardsPerUser) {
+    public void setMaxRewardsPerUser(Integer maxRewardsPerUser) {
         this.maxRewardsPerUser = maxRewardsPerUser;
     }
     //</editor-fold>

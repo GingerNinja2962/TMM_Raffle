@@ -6,21 +6,21 @@ import java.util.UUID;
 
 public class UserImpl implements User {
 
-    private final UUID ID;
+    private final UUID id;
     private final String userName;
     private Integer goldDonated;
 
     //<editor-fold desc="======== Constructors ========">
     UserImpl(String userName, Integer goldDonated) {
-        this.ID = UUID.randomUUID();
+        this.id = UUID.randomUUID();
         this.userName = userName;
         this.goldDonated = goldDonated;
     }
 
-    UserImpl(String userName) {
-        this.ID = UUID.randomUUID();
+    UserImpl(UUID id, String userName, Integer goldDonated) {
+        this.id = id;
         this.userName = userName;
-        this.goldDonated = 0;
+        this.goldDonated = goldDonated;
     }
     //</editor-fold>
 
@@ -28,7 +28,7 @@ public class UserImpl implements User {
     //<editor-fold desc="ID">
     @Override
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
     //</editor-fold>
 
@@ -43,11 +43,6 @@ public class UserImpl implements User {
     @Override
     public Integer getGold() {
         return this.goldDonated;
-    }
-
-    @Override
-    public void setGold(Integer amount) {
-        this.goldDonated = amount;
     }
 
     @Override

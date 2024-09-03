@@ -6,18 +6,15 @@ import java.util.UUID;
 public interface Item {
 
     UUID getId();
-    void setId(UUID id);
 
     LocalDateTime getCreationDate();
-    void setCreationDate(LocalDateTime creationDate);
 
     String getName();
-    void setName(String name);
+    void changeName(String name);
 
     Integer getValue();
-    void setValue(Integer value);
+    void changeValue(Integer value);
 
     boolean isAvailable();
-    void setAvailable(boolean available);
     void markAsSold();
 }

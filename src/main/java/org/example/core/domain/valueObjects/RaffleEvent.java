@@ -8,22 +8,22 @@ public interface RaffleEvent {
     UUID getId();
 
     // Cost per Ticket
-    int getCostPerTicket();
-    void setCostPerTicket(int costPerTicket);
+    Integer getCostPerTicket();
+    void setCostPerTicket(Integer costPerTicket);
 
     // Cost per Bonus Ticket (non-subtractive)
-    int getBonusTicketCost();
-    void setBonusTicketCost(int bonusTicketCost);
+    Integer getBonusTicketCost();
+    void setBonusTicketCost(Integer bonusTicketCost);
 
     // Amount of Bonus Tickets given per Bonus received
-    int getBonusTicketAmount();
-    void setBonusTicketAmount(int bonusTicketAmount);
+    Integer getBonusTicketAmount();
+    void setBonusTicketAmount(Integer bonusTicketAmount);
 
     // Max amount of Tickets allowed per user
-    int getMaxTicketCount();
-    void setMaxTicketCount(int maxTicketCount);
+    Integer getMaxTicketCount();
+    void setMaxTicketCount(Integer maxTicketCount);
 
     // Max amount of wins each user may have
-    int getMaxRewardsPerUser();
-    void setMaxRewardsPerUser(int maxRewardsPerUser);
+    Integer getMaxRewardsPerUser();
+    void setMaxRewardsPerUser(Integer maxRewardsPerUser);
 }

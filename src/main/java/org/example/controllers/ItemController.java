@@ -1,19 +1,33 @@
 package org.example.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ItemController {
 
-    @GetMapping("/get-items")
-    public String getItems() {
-        return "to be implemented";
+    @GetMapping("/get-item")
+    public ResponseEntity<String> getItems() {
+        return ResponseEntity.status(501).body("to be implemented");
     }
 
     @PostMapping("/add-item")
-    public String addItem() {
-        return "to be implemented";
+    public ResponseEntity<String> addItem() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @PutMapping("/update-item")
+    public ResponseEntity<String> updateItem() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @DeleteMapping("/remove-item")
+    public ResponseEntity<String> removeItem() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @GetMapping("/health-item")
+    public ResponseEntity<String> healthItem() {
+        return ResponseEntity.status(200).body("Items -> UP");
     }
 }

@@ -1,18 +1,17 @@
-package org.example.core.domain.entites;
+package org.example.core.domain.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import java.util.UUID;
 
 
 @Entity(name = "raffle")
-@Table(name = "TMM_Raffles", schema = "TMM_Raffle")
+//@Table(name = "TMM_Raffles", schema = "TMM_Raffle")
 public class RaffleEvent {
 
     @Id
-    private UUID Id;
+    private UUID id;
     private Integer costPerTicket;
     private Integer bonusTicketCost;
     private Integer bonusTicketAmount;
@@ -26,11 +25,11 @@ public class RaffleEvent {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="ID Methods">
     public UUID getId() {
-        return this.Id;
+        return this.id;
     }
 
     public void setId(UUID ID) {
-        this.Id = ID;
+        this.id = ID;
     }
     //</editor-fold>
 

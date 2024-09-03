@@ -9,6 +9,5 @@ public interface User {
     String getName();
 
     Integer getGold();
-    void setGold(Integer amount);
     void addGold(Integer additionalAmount);
 }

@@ -9,14 +9,21 @@ import java.util.UUID;
 
 public class EntryImpl implements Entry {
 
-    private final UUID ID;
+    private final UUID id;
     private final User user;
     private final Ticket ticket;
     private final RaffleEvent raffleEvent;
 
     //<editor-fold desc="======== Constructors ========">
     EntryImpl(User user, Ticket ticket, RaffleEvent raffleEvent) {
-        ID = UUID.randomUUID();
+        this.id = UUID.randomUUID();
+        this.user = user;
+        this.ticket = ticket;
+        this.raffleEvent = raffleEvent;
+    }
+
+    EntryImpl(UUID id, User user, Ticket ticket, RaffleEvent raffleEvent) {
+        this.id = id;
         this.user = user;
         this.ticket = ticket;
         this.raffleEvent = raffleEvent;
@@ -26,7 +33,7 @@ public class EntryImpl implements Entry {
     //<editor-fold desc="======== Getters & Setters ========">
     //<editor-fold desc="======== ID ========">
     public UUID getId() {
-        return this.ID;
+        return this.id;
     }
 
 
