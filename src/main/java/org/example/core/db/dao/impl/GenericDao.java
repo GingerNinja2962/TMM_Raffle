@@ -105,13 +105,13 @@ public class GenericDao<E extends BaseEntity, P, ID> {
 
     //<editor-fold desc="Date">
     public List<P> findByDate(@NonNull LocalDateTime date) {
-        List<E> entities = ((HasDateRepo<E>) repo).findByDate(date);
+        List<E> entities = ((HasDateRepo<E>) repo).findByCreationDate(date);
         logList(entities, this.getClass().getEnclosingMethod().getName());
         return converter.convertFromEntities(entities);
     }
 
     public List<P> findByDate(@NonNull LocalDateTime date, @NonNull Sort sort) {
-        List<E> entities = ((HasDateRepo<E>) repo).findByDate(date, sort);
+        List<E> entities = ((HasDateRepo<E>) repo).findByCreationDate(date, sort);
         logList(entities, this.getClass().getEnclosingMethod().getName());
         return converter.convertFromEntities(entities);
     }

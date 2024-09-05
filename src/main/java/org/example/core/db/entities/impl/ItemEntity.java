@@ -1,7 +1,6 @@
 package org.example.core.db.entities.impl;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import org.example.core.db.entities.BaseEntity;
 
 import java.time.LocalDateTime;
@@ -9,36 +8,54 @@ import java.util.UUID;
 
 @Entity
 //@Table(name = "TMM_Items", schema = "TMM_Raffle")
-public class ItemEntity implements BaseEntity {
+public class ItemEntity extends BaseEntity {
 
-    @Id
-    private UUID id;
     private String name;
-    private Integer goldValue;
-    private Boolean available = true;
+    private Integer value;
+    private Boolean validity = true;
     private LocalDateTime creationDate;
 
     //<editor-fold desc="======== Constructors ========">
     public ItemEntity() {
     }
 
-    public ItemEntity(UUID id, String name, Integer goldValue, Boolean available, LocalDateTime creationDate) {
+    public ItemEntity(UUID id, String name, Integer value, Boolean validity, LocalDateTime creationDate) {
         this.id = id;
         this.name = name;
-        this.goldValue = goldValue;
-        this.available = available;
+        this.value = value;
+        this.validity = validity;
         this.creationDate = creationDate;
     }
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    public UUID getId() {
-        return this.id;
+    //<editor-fold desc="Name">
+    public String getName() {
+        return this.name;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="value">
+    public Integer getValue() {
+        return this.value;
+    }
+
+    public void setValue(Integer goldValue) {
+        this.value = goldValue;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="validity">
+    public Boolean getValidity() {
+        return this.validity;
+    }
+
+    public void setValidity(boolean available) {
+        this.validity = available;
     }
     //</editor-fold>
 
@@ -51,41 +68,11 @@ public class ItemEntity implements BaseEntity {
         this.creationDate = creationDate;
     }
     //</editor-fold>
-
-    //<editor-fold desc="Name">
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Gold Value">
-    public Integer getGoldValue() {
-        return this.goldValue;
-    }
-
-    public void setGoldValue(Integer goldValue) {
-        this.goldValue = goldValue;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Availability">
-    public Boolean getAvailable() {
-        return this.available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-    //</editor-fold>
     //</editor-fold>
 
     @Override
     public String toString() {
         return String.format("{ID: %s, Name: %s, Value: %s, available: %s, CreationDate: %s}",
-                this.id, this.name, this.goldValue, this.available, this.creationDate);
+                this.id, this.name, this.value, this.validity, this.creationDate);
     }
 }

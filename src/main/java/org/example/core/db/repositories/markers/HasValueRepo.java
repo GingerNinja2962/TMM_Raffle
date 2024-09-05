@@ -7,7 +7,10 @@ import java.util.List;
 
 @NoRepositoryBean
 public interface HasValueRepo<E> {
+
+    //<editor-fold desc="Value">
     List<E> findByValue(Integer value);
 
     List<E> findByValue(Integer value, Sort sort);
+    //</editor-fold>
 }

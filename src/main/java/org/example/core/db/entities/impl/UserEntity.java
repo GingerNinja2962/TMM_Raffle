@@ -1,19 +1,14 @@
 package org.example.core.db.entities.impl;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import org.example.core.db.entities.BaseEntity;
-
-import java.util.UUID;
 
 @Entity(name = "user")
 //@Table(name = "TMM_Users", schema = "TMM_Raffle")
-public class UserEntity implements BaseEntity {
+public class UserEntity extends BaseEntity {
 
-    @Id
-    private UUID id;
-    private String userName;
-    private Integer goldDonated;
+    private String name;
+    private Integer value;
 
     //<editor-fold desc="======== Constructors ========">
     public UserEntity() {
@@ -21,33 +16,23 @@ public class UserEntity implements BaseEntity {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    public UUID getId() {
-        return this.id;
+    //<editor-fold desc="Name">
+    public String getName() {
+        return this.name;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="UserName">
-    public String getUserName() {
-        return this.userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String userName) {
+        this.name = userName;
     }
     //</editor-fold>
 
-    //<editor-fold desc="Gold">
-    public Integer getGoldDonated() {
-        return this.goldDonated;
+    //<editor-fold desc="Value">
+    public Integer getValue() {
+        return this.value;
     }
 
-    public void setGoldDonated(Integer amount) {
-        this.goldDonated = amount;
+    public void setValue(Integer amount) {
+        this.value = amount;
     }
     //</editor-fold>
     //</editor-fold>

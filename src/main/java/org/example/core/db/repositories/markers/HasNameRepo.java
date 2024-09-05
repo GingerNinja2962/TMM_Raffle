@@ -7,7 +7,10 @@ import java.util.List;
 
 @NoRepositoryBean
 public interface HasNameRepo<E> {
+
+    //<editor-fold desc="Name">
     List<E> findByName(String name);
 
     List<E> findByName(String name, Sort sort);
+    //</editor-fold>
 }

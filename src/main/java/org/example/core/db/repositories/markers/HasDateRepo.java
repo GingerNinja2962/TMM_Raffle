@@ -8,7 +8,10 @@ import java.util.List;
 
 @NoRepositoryBean
 public interface HasDateRepo<E> {
-    List<E> findByDate(LocalDateTime issuedAt);
 
-    List<E> findByDate(LocalDateTime issuedAt, Sort sort);
+    //<editor-fold desc="Date">
+    List<E> findByCreationDate(LocalDateTime creationDate);
+
+    List<E> findByCreationDate(LocalDateTime creationDate, Sort sort);
+    //</editor-fold>
 }

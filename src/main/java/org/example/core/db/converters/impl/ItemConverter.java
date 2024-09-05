@@ -22,11 +22,11 @@ public class ItemConverter implements Converter<ItemEntity, Item> {
 
     @Override
     public Item convertFromEntity(@NonNull ItemEntity entity) {
-        if (checkNullValues(entity.getId(), entity.getName(), entity.getGoldValue(), entity.getAvailable(), entity.getCreationDate(),
+        if (checkNullValues(entity.getId(), entity.getName(), entity.getValue(), entity.getValidity(), entity.getCreationDate(),
                 this.getClass().getEnclosingMethod().getName()))
             return null;
 
-        Item item = new ItemImpl(entity.getId(), entity.getName(), entity.getGoldValue(), entity.getAvailable(), entity.getCreationDate());
+        Item item = new ItemImpl(entity.getId(), entity.getName(), entity.getValue(), entity.getValidity(), entity.getCreationDate());
         logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
                 this.getClass().getEnclosingMethod().getName(), entity));
         return item;

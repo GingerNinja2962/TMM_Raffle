@@ -6,4 +6,8 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
 public interface BaseRepo<E extends BaseEntity, ID> extends JpaRepository<E, ID> {
+
+    default E findByID(ID id) {
+        return this.findById(id).orElse(null);
+    }
 }

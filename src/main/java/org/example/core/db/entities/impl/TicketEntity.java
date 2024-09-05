@@ -1,19 +1,15 @@
 package org.example.core.db.entities.impl;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import org.example.core.db.entities.BaseEntity;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity(name = "ticket")
 //@Table(name = "TMM_Tickets", schema = "TMM_Raffle")
-public class TicketEntity implements BaseEntity {
+public class TicketEntity extends BaseEntity {
 
-    @Id
-    private UUID id;
-    private LocalDateTime issuedAt;
+    private LocalDateTime creationDate;
     private Boolean validity;
 
     //<editor-fold desc="======== Constructors ========">
@@ -22,23 +18,13 @@ public class TicketEntity implements BaseEntity {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    public UUID getId() {
-        return this.id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Creation Date">
-    public LocalDateTime getIssuedAt() {
-        return this.issuedAt;
+    public LocalDateTime getCreationDate() {
+        return this.creationDate;
     }
 
-    public void setIssuedAt(LocalDateTime issuedAt) {
-        this.issuedAt = issuedAt;
+    public void setCreationDate(LocalDateTime issuedAt) {
+        this.creationDate = issuedAt;
     }
     //</editor-fold>
 
