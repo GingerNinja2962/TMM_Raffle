@@ -8,19 +8,19 @@ import java.util.UUID;
 public class TicketImpl implements Ticket {
 
     private final UUID id;
-    private final LocalDateTime issuedAt;
     private boolean validity = true;
+    private final LocalDateTime issuedAt;
 
     //<editor-fold desc="======== Constructors ========">
-    TicketImpl() {
+    public TicketImpl() {
         this.id = UUID.randomUUID();
         this.issuedAt = LocalDateTime.now();
     }
 
-    TicketImpl(UUID id, LocalDateTime issuedAt, boolean validity) {
+    public TicketImpl(UUID id, boolean validity, LocalDateTime issuedAt) {
         this.id = id;
-        this.issuedAt = issuedAt;
         this.validity = validity;
+        this.issuedAt = issuedAt;
     }
     //</editor-fold>
 
@@ -32,22 +32,22 @@ public class TicketImpl implements Ticket {
     }
     //</editor-fold>
 
-    //<editor-fold desc="Creation Date">
-    @Override
-    public LocalDateTime getCreationDate() {
-        return this.issuedAt;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Validity">
     @Override
-    public boolean isValid() {
+    public Boolean isValid() {
         return this.validity;
     }
 
     @Override
     public void markAsUsed() {
         validity = false;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Creation Date">
+    @Override
+    public LocalDateTime getCreationDate() {
+        return this.issuedAt;
     }
     //</editor-fold>
     //</editor-fold>

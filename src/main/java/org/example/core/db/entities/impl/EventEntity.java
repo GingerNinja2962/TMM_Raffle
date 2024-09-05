@@ -3,6 +3,8 @@ package org.example.core.db.entities.impl;
 import jakarta.persistence.Entity;
 import org.example.core.db.entities.BaseEntity;
 
+import java.util.UUID;
+
 
 @Entity(name = "raffle")
 //@Table(name = "TMM_Raffles", schema = "TMM_Raffle")
@@ -16,6 +18,15 @@ public class EventEntity extends BaseEntity {
 
     //<editor-fold desc="======== Constructors ========">
     public EventEntity() {
+    }
+
+    public EventEntity(UUID id, Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
+        this.id = id;
+        this.costPerTicket = costPerTicket;
+        this.bonusTicketCost = bonusTicketCost;
+        this.bonusTicketAmount = bonusTicketAmount;
+        this.maxTicketCount = maxTicketCount;
+        this.maxRewardsPerUser = maxRewardsPerUser;
     }
     //</editor-fold>
 

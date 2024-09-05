@@ -6,7 +6,7 @@ public interface Entry {
 
     UUID getId();
 
-    Event getRaffleEvent();
+    Event getEvent();
 
     User getUser();
 

@@ -14,7 +14,7 @@ public class EventImpl implements Event {
     private Integer maxRewardsPerUser;
 
     //<editor-fold desc="======== Constructors ========">
-    EventImpl(Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
+    public EventImpl(Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
         this.id = UUID.randomUUID();
         this.costPerTicket = costPerTicket;
         this.bonusTicketCost = bonusTicketCost;
@@ -23,7 +23,7 @@ public class EventImpl implements Event {
         this.maxRewardsPerUser = maxRewardsPerUser;
     }
 
-    EventImpl(UUID id, Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
+    public EventImpl(UUID id, Integer costPerTicket, Integer bonusTicketCost, Integer bonusTicketAmount, Integer maxTicketCount, Integer maxRewardsPerUser) {
         this.id = id;
         this.costPerTicket = costPerTicket;
         this.bonusTicketCost = bonusTicketCost;

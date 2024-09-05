@@ -7,8 +7,8 @@ public interface Ticket {
 
     UUID getId();
 
-    LocalDateTime getCreationDate();
-
-    boolean isValid();
+    Boolean isValid();
     void markAsUsed();
+
+    LocalDateTime getCreationDate();
 }

@@ -11,13 +11,13 @@ public class UserImpl implements User {
     private Integer goldDonated;
 
     //<editor-fold desc="======== Constructors ========">
-    UserImpl(String userName, Integer goldDonated) {
+    public UserImpl(String userName, Integer goldDonated) {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.goldDonated = goldDonated;
     }
 
-    UserImpl(UUID id, String userName, Integer goldDonated) {
+    public UserImpl(UUID id, String userName, Integer goldDonated) {
         this.id = id;
         this.userName = userName;
         this.goldDonated = goldDonated;

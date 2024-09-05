@@ -15,14 +15,14 @@ public class EntryImpl implements Entry {
     private final Event event;
 
     //<editor-fold desc="======== Constructors ========">
-    EntryImpl(User user, Ticket ticket, Event event) {
+    public EntryImpl(User user, Ticket ticket, Event event) {
         this.id = UUID.randomUUID();
         this.user = user;
         this.ticket = ticket;
         this.event = event;
     }
 
-    EntryImpl(UUID id, User user, Ticket ticket, Event event) {
+    public EntryImpl(UUID id, User user, Ticket ticket, Event event) {
         this.id = id;
         this.user = user;
         this.ticket = ticket;
@@ -31,29 +31,27 @@ public class EntryImpl implements Entry {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="======== ID ========">
+    //<editor-fold desc="ID">
     public UUID getId() {
         return this.id;
     }
-
-
     //</editor-fold>
 
-    //<editor-fold desc="======== Raffle Event ========">
+    //<editor-fold desc="Event">
     @Override
-    public Event getRaffleEvent() {
+    public Event getEvent() {
         return this.event;
     }
     //</editor-fold>
 
-    //<editor-fold desc="======== Users ========">
+    //<editor-fold desc="User">
     @Override
     public User getUser() {
         return this.user;
     }
     //</editor-fold>
 
-    //<editor-fold desc="======== Tickets ========">
+    //<editor-fold desc="Ticket">
     @Override
     public Ticket getTicket() {
         return this.ticket;

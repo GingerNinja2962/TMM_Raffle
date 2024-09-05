@@ -5,6 +5,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
 import org.example.core.db.entities.BaseEntity;
 
+import java.util.UUID;
+
 @Entity(name = "entry")
 //@Table(name = "TMM_Entries", schema = "TMM_Raffle")
 public class EntryEntity extends BaseEntity {
@@ -20,6 +22,13 @@ public class EntryEntity extends BaseEntity {
 
     //<editor-fold desc="======== Constructors ========">
     public EntryEntity() {
+    }
+
+    public EntryEntity(UUID id, UserEntity user, TicketEntity ticket, EventEntity event) {
+        this.id = id;
+        this.user = user;
+        this.ticket = ticket;
+        this.event = event;
     }
     //</editor-fold>
 
@@ -45,11 +54,11 @@ public class EntryEntity extends BaseEntity {
     //</editor-fold>
 
     //<editor-fold desc="Event">
-    public EventEntity getRaffleEvent() {
+    public EventEntity getEvent() {
         return this.event;
     }
 
-    public void setRaffleEvent(EventEntity eventEntity) {
+    public void setEvent(EventEntity eventEntity) {
         this.event = eventEntity;
     }
     //</editor-fold>

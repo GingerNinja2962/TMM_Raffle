@@ -3,6 +3,8 @@ package org.example.core.db.entities.impl;
 import jakarta.persistence.Entity;
 import org.example.core.db.entities.BaseEntity;
 
+import java.util.UUID;
+
 @Entity(name = "user")
 //@Table(name = "TMM_Users", schema = "TMM_Raffle")
 public class UserEntity extends BaseEntity {
@@ -12,6 +14,12 @@ public class UserEntity extends BaseEntity {
 
     //<editor-fold desc="======== Constructors ========">
     public UserEntity() {
+    }
+
+    public UserEntity(UUID id, String name, Integer value) {
+        this.id = id;
+        this.name = name;
+        this.value = value;
     }
     //</editor-fold>
 

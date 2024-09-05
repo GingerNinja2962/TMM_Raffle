@@ -9,7 +9,7 @@ public class ItemImpl implements Item {
 
     private final UUID id;
     private final LocalDateTime creationDate;
-    private boolean available = true;
+    private Boolean available = true;
     private String name;
     private Integer value;
 
