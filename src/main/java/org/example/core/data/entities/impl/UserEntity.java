@@ -45,4 +45,9 @@ public class UserEntity extends BaseEntity {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("User: {ID: %s, Name: %s, GoldValue: %s}", this.id, this.name, this.goldValue);
+    }
 }

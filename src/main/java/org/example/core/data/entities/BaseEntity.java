@@ -22,4 +22,9 @@ public abstract class BaseEntity {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("{ID: %s}", this.id);
+    }
 }

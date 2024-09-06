@@ -82,4 +82,10 @@ public class EventEntity extends BaseEntity {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Event: {ID: %s, CostPerTicket: %s, BonusTicketCost: %s, BonusTicketAmount: %s, MaxTicketCount: %s, MaxRewardsPerUser: %s}",
+                this.id, this.costPerTicket, this.bonusTicketCost, this.bonusTicketAmount, this.maxTicketCount, this.maxRewardsPerUser);
+    }
 }

@@ -73,7 +73,7 @@ public class ItemEntity extends BaseEntity {
 
     @Override
     public String toString() {
-        return String.format("{ID: %s, Name: %s, Value: %s, available: %s, CreationDate: %s}",
+        return String.format("Item: {ID: %s, Name: %s, GoldValue: %s, Validity: %s, CreationDate: %s}",
                 this.id, this.name, this.goldValue, this.validity, this.creationDate);
     }
 }

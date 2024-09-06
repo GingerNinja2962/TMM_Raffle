@@ -46,4 +46,9 @@ public class TicketEntity extends BaseEntity {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Ticket: {ID: %s, Validity: %s, CreationDate: %s}", this.id, this.validity, this.creationDate);
+    }
 }

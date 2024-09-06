@@ -128,7 +128,7 @@ public class GenericDao<E extends BaseEntity, P, ID> {
             return;
         }
         StringBuilder sb = new StringBuilder();
-        entities.forEach((entity) -> sb.append(String.format("%s\n}", entity.toString())));
+        entities.forEach((entity) -> sb.append(String.format("%s\n", entity.toString())));
         logger.log(Level.DEBUG, "Method '{}' successfully found the following entities: {}", methodName, sb.toString());
     }
     //</editor-fold>

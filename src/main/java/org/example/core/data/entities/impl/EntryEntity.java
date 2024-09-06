@@ -64,4 +64,10 @@ public class EntryEntity extends BaseEntity {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Entry: {ID: %s, UserID: %s, TicketID: %s, EventID: %s}",
+                this.id, this.user.getId(), this.ticket.getId(), this.event.getId());
+    }
 }
