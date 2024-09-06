@@ -20,12 +20,12 @@ public class TicketConverter implements Converter<TicketEntity, Ticket> {
 
     @Override
     public Ticket convertFromEntity(@NonNull TicketEntity entity) {
-        if (hasNullValues(entity, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(entity, "convertFromEntity"))
             return null;
 
         Ticket Ticket = new TicketImpl(entity.getId(), entity.getValidity(), entity.getCreationDate());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertFromEntity", entity));
         return Ticket;
     }
 
@@ -44,12 +44,12 @@ public class TicketConverter implements Converter<TicketEntity, Ticket> {
 
     @Override
     public TicketEntity convertToEntity(@NonNull Ticket pojo) {
-        if (hasNullValues(pojo, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(pojo, "convertToEntity"))
             return null;
 
         TicketEntity entity = new TicketEntity(pojo.getId(), pojo.isValid(), pojo.getCreationDate());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertToEntity", entity));
         return entity;
     }
 
@@ -67,15 +67,15 @@ public class TicketConverter implements Converter<TicketEntity, Ticket> {
     private boolean checkNull(boolean id, boolean validity, boolean creationDate, String methodName) {
         boolean result = false;
         if (id) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (validity) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'validity' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'validity' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (creationDate) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'creationDate' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'creationDate' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         return result;

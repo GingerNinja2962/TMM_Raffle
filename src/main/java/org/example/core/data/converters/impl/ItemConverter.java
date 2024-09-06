@@ -20,12 +20,12 @@ public class ItemConverter implements Converter<ItemEntity, Item> {
 
     @Override
     public Item convertFromEntity(@NonNull ItemEntity entity) {
-        if (hasNullValues(entity, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(entity, "convertFromEntity"))
             return null;
 
         Item item = new ItemImpl(entity.getId(), entity.getName(), entity.getGoldValue(), entity.getValidity(), entity.getCreationDate());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertFromEntity", entity));
         return item;
     }
 
@@ -44,12 +44,12 @@ public class ItemConverter implements Converter<ItemEntity, Item> {
 
     @Override
     public ItemEntity convertToEntity(@NonNull Item pojo) {
-        if (hasNullValues(pojo, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(pojo, "convertToEntity"))
             return null;
 
         ItemEntity entity = new ItemEntity(pojo.getId(), pojo.getName(), pojo.getValue(), pojo.isAvailable(), pojo.getCreationDate());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertToEntity", entity));
         return entity;
     }
 
@@ -65,23 +65,23 @@ public class ItemConverter implements Converter<ItemEntity, Item> {
     private boolean checkNull(boolean id, boolean name, boolean goldValue, boolean validity, boolean creationDate, String methodName) {
         boolean result = false;
         if (id) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (name) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'name' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'name' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (goldValue) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'goldValue' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'goldValue' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (validity) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'validity' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'validity' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (creationDate) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'creationDate' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'creationDate' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         return result;

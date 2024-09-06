@@ -32,13 +32,13 @@ public class EntryConverter implements Converter<EntryEntity, Entry> {
 
     @Override
     public Entry convertFromEntity(@NonNull EntryEntity entity) {
-        if (hasNullValues(entity, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(entity, "convertFromEntity"))
             return null;
 
         Entry entry = new EntryImpl(entity.getId(), userConverter.convertFromEntity(entity.getUser()),
                 ticketConverter.convertFromEntity(entity.getTicket()), eventConverter.convertFromEntity(entity.getEvent()));
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertFromEntity", entity));
         return entry;
     }
 
@@ -57,13 +57,13 @@ public class EntryConverter implements Converter<EntryEntity, Entry> {
 
     @Override
     public EntryEntity convertToEntity(@NonNull Entry pojo) {
-        if (hasNullValues(pojo, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(pojo, "convertToEntity"))
             return null;
 
         EntryEntity entity = new EntryEntity(pojo.getId(), userConverter.convertToEntity(pojo.getUser()),
                 ticketConverter.convertToEntity(pojo.getTicket()), eventConverter.convertToEntity(pojo.getEvent()));
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertToEntity", entity));
         return entity;
     }
 
@@ -79,19 +79,19 @@ public class EntryConverter implements Converter<EntryEntity, Entry> {
     private boolean checkNull(boolean id, boolean user, boolean ticket, boolean event, String methodName) {
         boolean result = false;
         if (id) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (user) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'user' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'user' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (ticket) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'ticket' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'ticket' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (event) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'event' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'event' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         return result;

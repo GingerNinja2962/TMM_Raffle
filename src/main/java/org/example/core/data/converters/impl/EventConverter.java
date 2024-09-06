@@ -20,13 +20,13 @@ public class EventConverter implements Converter<EventEntity, Event> {
 
     @Override
     public Event convertFromEntity(@NonNull EventEntity entity) {
-        if (hasNullValues(entity, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(entity, "convertFromEntity"))
             return null;
 
         Event Event = new EventImpl(entity.getId(), entity.getCostPerTicket(), entity.getBonusTicketCost(),
                 entity.getBonusTicketAmount(), entity.getMaxTicketCount(), entity.getMaxRewardsPerUser());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertFromEntity", entity));
         return Event;
     }
 
@@ -45,13 +45,13 @@ public class EventConverter implements Converter<EventEntity, Event> {
 
     @Override
     public EventEntity convertToEntity(@NonNull Event pojo) {
-        if (hasNullValues(pojo, this.getClass().getEnclosingMethod().getName()))
+        if (hasNullValues(pojo, "convertToEntity"))
             return null;
 
         EventEntity entity = new EventEntity(pojo.getId(), pojo.getCostPerTicket(), pojo.getBonusTicketCost(),
                 pojo.getBonusTicketAmount(), pojo.getMaxTicketCount(), pojo.getMaxRewardsPerUser());
-        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s", this.getClass().getName(),
-                this.getClass().getEnclosingMethod().getName(), entity));
+        logger.log(Level.DEBUG, String.format("%s's method %s successfully created -> %s",
+                this.getClass().getName(), "convertToEntity", entity));
         return entity;
     }
 
@@ -72,27 +72,27 @@ public class EventConverter implements Converter<EventEntity, Event> {
                               boolean maxTicketCount, boolean maxRewardsPerUser, String methodName) {
         boolean result = false;
         if (id) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'id' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (costPerTicket) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'costPerTicket' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'costPerTicket' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (bonusTicketCost) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'bonusTicketCost' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'bonusTicketCost' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (bonusTicketAmount) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'bonusTicketAmount' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'bonusTicketAmount' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (maxTicketCount) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'maxTicketCount' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'maxTicketCount' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         if (maxRewardsPerUser) {
-            logger.log(Level.ERROR, "{}'s method {} cannot convert due to 'maxRewardsPerUser' being NULL.", this.getClass().getName(), methodName);
+            logger.log(Level.ERROR, "'{}'s method '{}' cannot convert due to 'maxRewardsPerUser' being NULL.", this.getClass().getName(), methodName);
             result = true;
         }
         return result;
