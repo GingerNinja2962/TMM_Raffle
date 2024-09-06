@@ -1,9 +1,9 @@
 package org.example.core.configs;
 
-import org.example.core.db.converters.Converter;
-import org.example.core.db.dao.impl.GenericDao;
-import org.example.core.db.entities.impl.*;
-import org.example.core.db.repositories.EntryRepo;
+import org.example.core.data.converters.Converter;
+import org.example.core.data.dao.impl.GenericDao;
+import org.example.core.data.entities.impl.*;
+import org.example.core.data.repositories.*;
 import org.example.core.domain.value_objects.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,27 +15,27 @@ import java.util.UUID;
 public class GenericDaoConfiguration {
 
     @Autowired
-    private EntryRepo<EntryEntity, UUID> entryRepo;
+    private EntryRepo<UUID> entryRepo;
     @Autowired
     private Converter<EntryEntity, Entry> entryConverter;
 
     @Autowired
-    private EntryRepo<EventEntity, UUID> eventRepo;
+    private EventRepo<UUID> eventRepo;
     @Autowired
     private Converter<EventEntity, Event> eventConverter;
 
     @Autowired
-    private EntryRepo<ItemEntity, UUID> itemRepo;
+    private ItemRepo<UUID> itemRepo;
     @Autowired
     private Converter<ItemEntity, Item> itemConverter;
 
     @Autowired
-    private EntryRepo<TicketEntity, UUID> ticketRepo;
+    private TicketRepo<UUID> ticketRepo;
     @Autowired
     private Converter<TicketEntity, Ticket> ticketConverter;
 
     @Autowired
-    private EntryRepo<UserEntity, UUID> userRepo;
+    private UserRepo<UUID> userRepo;
     @Autowired
     private Converter<UserEntity, User> userConverter;
 
