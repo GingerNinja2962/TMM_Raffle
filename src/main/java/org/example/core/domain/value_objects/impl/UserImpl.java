@@ -51,4 +51,10 @@ public class UserImpl implements User {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Item: {ID: %s, UserName: %s, GoldDonated: %s}",
+                this.id, this.userName, this.goldDonated);
+    }
 }

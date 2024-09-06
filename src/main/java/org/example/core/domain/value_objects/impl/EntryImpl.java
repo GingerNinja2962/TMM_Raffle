@@ -58,4 +58,10 @@ public class EntryImpl implements Entry {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Entry: {ID: %s, User ID: %s, Ticket ID: %s, Event ID: %s}",
+                this.id, this.user.getId(), this.ticket.getId(), this.event.getId());
+    }
 }

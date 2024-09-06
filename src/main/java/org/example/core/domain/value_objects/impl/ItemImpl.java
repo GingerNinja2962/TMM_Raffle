@@ -53,8 +53,7 @@ public class ItemImpl implements Item {
 
     @Override
     public void changeName(String name) {
-        if (this.name.isBlank())
-            this.name = name;
+        this.name = name;
     }
     //</editor-fold>
 
@@ -82,4 +81,10 @@ public class ItemImpl implements Item {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Item: {ID: %s, Name: %s, Value: %s, Availability: %s, CreationDate: %s}",
+                this.id, this.name, this.value, this.available, this.creationDate);
+    }
 }

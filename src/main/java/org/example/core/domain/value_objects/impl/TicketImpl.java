@@ -51,4 +51,10 @@ public class TicketImpl implements Ticket {
     }
     //</editor-fold>
     //</editor-fold>
+
+    @Override
+    public String toString() {
+        return String.format("Item: {ID: %s, Validity: %s, IssuedAt: %s}",
+                this.id, this.validity, this.issuedAt);
+    }
 }
