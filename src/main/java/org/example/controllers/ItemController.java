@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class ItemController {
 
     @GetMapping("/get-item")
+    public ResponseEntity<String> getItem() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @GetMapping("/get-items")
     public ResponseEntity<String> getItems() {
         return ResponseEntity.status(501).body("to be implemented");
     }

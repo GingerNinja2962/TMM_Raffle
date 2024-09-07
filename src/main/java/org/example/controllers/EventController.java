@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class EventController {
 
     @GetMapping("/get-event")
+    public ResponseEntity<String> getEvent() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @GetMapping("/get-events")
     public ResponseEntity<String> getEvents() {
         return ResponseEntity.status(501).body("to be implemented");
     }

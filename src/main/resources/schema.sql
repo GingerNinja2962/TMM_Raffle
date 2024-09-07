@@ -2,20 +2,22 @@ CREATE SCHEMA IF NOT EXISTS TMM_Raffle;
 
 SET SCHEMA TMM_Raffle;
 
-CREATE TABLE TMM_Users (
+CREATE TABLE IF NOT EXISTS TMM_Users
+(
         ID UUID NOT NULL PRIMARY KEY,
         Name VARCHAR(50) NOT NULL,
         Gold BIGINT NOT NULL,
         CreationDate TIMESTAMP NOT NULL
 );
 
-CREATE TABLE TMM_Tickets (
+CREATE TABLE IF NOT EXISTS TMM_Tickets
+(
         ID UUID NOT NULL PRIMARY KEY,
         Validity BIT NOT NULL,
         CreationDate TIMESTAMP NOT NULL
 );
 
-CREATE TABLE TMM_Event
+CREATE TABLE IF NOT EXISTS TMM_Event
 (
         ID UUID NOT NULL PRIMARY KEY,
         CostPerTicket BIGINT NOT NULL,
@@ -25,7 +27,8 @@ CREATE TABLE TMM_Event
         maxRewardsPerUser BIGINT NOT NULL
 );
 
-CREATE TABLE TMM_Entries (
+CREATE TABLE IF NOT EXISTS TMM_Entries
+(
         ID UUID NOT NULL PRIMARY KEY,
         UserID UUID NOT NULL,
         TicketID UUID NOT NULL,
@@ -35,11 +38,12 @@ CREATE TABLE TMM_Entries (
         FOREIGN KEY (RaffleID) REFERENCES TMM_Event (ID)
 );
 
-CREATE TABLE TMM_Items (
+CREATE TABLE IF NOT EXISTS TMM_Items
+(
         ID UUID NOT NULL PRIMARY KEY,
         Name VARCHAR(50) NOT NULL,
         GoldValue BIGINT NOT NULL,
-        Validity     BIT       NOT NULL,
+        Validity BIT NOT NULL,
         CreationDate TIMESTAMP NOT NULL
 );
 

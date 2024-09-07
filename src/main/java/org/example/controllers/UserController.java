@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @GetMapping("/get-user")
+    public ResponseEntity<String> getUser() {
+        return ResponseEntity.status(501).body("to be implemented");
+    }
+
+    @GetMapping("/get-users")
     public ResponseEntity<String> getUsers() {
         return ResponseEntity.status(501).body("to be implemented");
     }
