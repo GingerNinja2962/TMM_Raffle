@@ -5,13 +5,12 @@ import org.example.core.domain.value_objects.Item;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class ItemImpl implements Item {
+public class ItemImpl extends BaseID implements Item {
 
-    private final UUID id;
-    private final LocalDateTime creationDate;
-    private Boolean available = true;
     private String name;
     private Integer value;
+    private final LocalDateTime creationDate;
+    private Boolean available = true;
 
     //<editor-fold desc="======== Constructors ========">
     public ItemImpl(String Name, Integer Value) {
@@ -31,20 +30,6 @@ public class ItemImpl implements Item {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    @Override
-    public UUID getId() {
-        return this.id;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Creation Date">
-    @Override
-    public LocalDateTime getCreationDate() {
-        return this.creationDate;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Name">
     @Override
     public String getName() {
@@ -78,6 +63,13 @@ public class ItemImpl implements Item {
     @Override
     public void markAsSold() {
         this.available = false;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Creation Date">
+    @Override
+    public LocalDateTime getCreationDate() {
+        return this.creationDate;
     }
     //</editor-fold>
     //</editor-fold>

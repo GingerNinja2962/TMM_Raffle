@@ -10,6 +10,9 @@ import java.util.UUID;
 
 @Service
 public class SomethingService {
+    // TODO find a suitable design for services
+    // either one service per (Entity) or
+    // one service per application aspect. (see Design file for more info)
 
     GenericDao<EntryEntity, Entry, UUID> entryDao;
     GenericDao<EventEntity, Event, UUID> eventDao;

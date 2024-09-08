@@ -7,9 +7,8 @@ import org.example.core.domain.value_objects.User;
 
 import java.util.UUID;
 
-public class EntryImpl implements Entry {
+public class EntryImpl extends BaseID implements Entry {
 
-    private final UUID id;
     private final User user;
     private final Ticket ticket;
     private final Event event;
@@ -31,19 +30,6 @@ public class EntryImpl implements Entry {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    public UUID getId() {
-        return this.id;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Event">
-    @Override
-    public Event getEvent() {
-        return this.event;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="User">
     @Override
     public User getUser() {
@@ -55,6 +41,13 @@ public class EntryImpl implements Entry {
     @Override
     public Ticket getTicket() {
         return this.ticket;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Event">
+    @Override
+    public Event getEvent() {
+        return this.event;
     }
     //</editor-fold>
     //</editor-fold>

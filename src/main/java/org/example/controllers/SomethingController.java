@@ -10,6 +10,9 @@ import java.util.UUID;
 
 @RestController
 public class SomethingController {
+    // TODO find a suitable design for controllers
+    // either one controller per (Entity) or
+    // one controller per application aspect. (see Design file for more info)
 
     //<editor-fold desc="Event">
     @GetMapping(value = "/get-event")

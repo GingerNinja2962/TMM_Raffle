@@ -5,9 +5,8 @@ import org.example.core.domain.value_objects.Ticket;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class TicketImpl implements Ticket {
+public class TicketImpl extends BaseID implements Ticket {
 
-    private final UUID id;
     private boolean validity = true;
     private final LocalDateTime issuedAt;
 
@@ -25,13 +24,6 @@ public class TicketImpl implements Ticket {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    @Override
-    public UUID getId() {
-        return this.id;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Validity">
     @Override
     public Boolean isValid() {

@@ -7,8 +7,6 @@ public interface Item {
 
     UUID getId();
 
-    LocalDateTime getCreationDate();
-
     String getName();
     void changeName(String name);
 
@@ -17,4 +15,6 @@ public interface Item {
 
     Boolean isAvailable();
     void markAsSold();
+
+    LocalDateTime getCreationDate();
 }

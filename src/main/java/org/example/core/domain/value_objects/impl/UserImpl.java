@@ -4,9 +4,8 @@ import org.example.core.domain.value_objects.User;
 
 import java.util.UUID;
 
-public class UserImpl implements User {
+public class UserImpl extends BaseID implements User {
 
-    private final UUID id;
     private final String userName;
     private Integer goldDonated;
 
@@ -25,13 +24,6 @@ public class UserImpl implements User {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID">
-    @Override
-    public UUID getId() {
-        return this.id;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Name">
     @Override
     public String getName() {

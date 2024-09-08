@@ -4,9 +4,8 @@ import org.example.core.domain.value_objects.Event;
 
 import java.util.UUID;
 
-public class EventImpl implements Event {
+public class EventImpl extends BaseID implements Event {
 
-    private final UUID id;
     private Integer costPerTicket;
     private Integer bonusTicketCost;
     private Integer bonusTicketAmount;
@@ -34,13 +33,6 @@ public class EventImpl implements Event {
     //</editor-fold>
 
     //<editor-fold desc="======== Getters & Setters ========">
-    //<editor-fold desc="ID Methods">
-    @Override
-    public UUID getId() {
-        return this.id;
-    }
-    //</editor-fold>
-
     //<editor-fold desc="Cost per Ticket">
     @Override
     public Integer getCostPerTicket() {
