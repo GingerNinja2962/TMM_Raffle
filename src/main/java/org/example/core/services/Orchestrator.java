@@ -1,7 +1,7 @@
 package org.example.core.services;
 
-import org.example.core.domain.models.Impl.ItemImpl;
-import org.example.core.domain.models.Impl.UserImpl;
+import org.example.core.domain.value_objects.impl.ItemImpl;
+import org.example.core.domain.value_objects.impl.UserImpl;
 
 import java.util.HashMap;
 import java.util.Map;

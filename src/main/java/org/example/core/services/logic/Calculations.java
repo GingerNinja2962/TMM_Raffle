@@ -3,12 +3,12 @@ package org.example.core.services.logic;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.core.domain.data_Structures.Impl.TupleImpl;
-import org.example.core.domain.data_Structures.Tuple;
-import org.example.core.domain.models.Entry;
-import org.example.core.domain.models.Item;
-import org.example.core.domain.models.RaffleEvent;
-import org.example.core.domain.models.User;
+import org.example.core.domain.data_structures.Impl.TupleImpl;
+import org.example.core.domain.data_structures.Tuple;
+import org.example.core.domain.value_objects.Entry;
+import org.example.core.domain.value_objects.Event;
+import org.example.core.domain.value_objects.Item;
+import org.example.core.domain.value_objects.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,17 +20,17 @@ public class Calculations {
     private static final Logger logger = LogManager.getLogger();
 
     //<editor-fold desc="======== Ticket Calculation ========">
-    public int calculateUsersTickets(User user, RaffleEvent event) {
+    public int calculateUsersTickets(User user, Event event) {
         int tickets = calculateStandardTickets(user.getGold(), event);
         tickets += calculateBonusTickets(user.getGold(), event);
         return tickets;
     }
 
-    private int calculateStandardTickets(int gold, RaffleEvent event) {
+    private int calculateStandardTickets(int gold, Event event) {
         return Math.floorDiv(gold, event.getCostPerTicket());
     }
 
-    private int calculateBonusTickets(int gold, RaffleEvent event) {
+    private int calculateBonusTickets(int gold, Event event) {
         return Math.multiplyExact(event.getBonusTicketAmount(),
                 Math.floorDiv(gold, event.getBonusTicketCost()));
     }
