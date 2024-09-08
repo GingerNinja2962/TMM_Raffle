@@ -1,7 +1,10 @@
 package org.example.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
@@ -19,7 +22,7 @@ public class SomethingController {
         return ResponseEntity.status(501).body("to be implemented");
     }
 
-    @PostMapping(value = "/add-event")
+    @PutMapping(value = "/add-event")
     public ResponseEntity<String> addEvent() {
         return ResponseEntity.status(501).body("to be implemented");
     }
@@ -46,7 +49,7 @@ public class SomethingController {
         return ResponseEntity.status(501).body("to be implemented");
     }
 
-    @PostMapping(value = "/add-item")
+    @PutMapping(value = "/add-item")
     public ResponseEntity<String> addItem() {
         return ResponseEntity.status(501).body("to be implemented");
     }
@@ -73,7 +76,7 @@ public class SomethingController {
         return ResponseEntity.status(501).body("to be implemented");
     }
 
-    @PostMapping(value = "/add-user")
+    @PutMapping(value = "/add-user")
     public ResponseEntity<String> addUser() {
         return ResponseEntity.status(501).body("to be implemented");
     }
