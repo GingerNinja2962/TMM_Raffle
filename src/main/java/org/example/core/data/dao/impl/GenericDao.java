@@ -32,16 +32,15 @@ public class GenericDao<E extends BaseEntity, P, ID> {
     //</editor-fold>
 
     //<editor-fold desc="Save">
-    public E save(@NonNull E entity) {
+    public void save(@NonNull E entity) {
         E savedEntity = repo.save(entity);
         logger.log(Level.INFO, "Successfully saved entity: {}", savedEntity.toString());
-        return savedEntity;
     }
 
-    public E save(@NonNull P pojo) {
+    public void save(@NonNull P pojo) {
         E convertedEntity = converter.convertToEntity(pojo);
         logger.log(Level.INFO, "Successfully converted pojo to entity: {}", convertedEntity.toString());
-        return save(convertedEntity);
+        save(convertedEntity);
     }
     //</editor-fold>
 
